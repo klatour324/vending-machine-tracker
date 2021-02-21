@@ -1,6 +1,12 @@
 <h1><%= @machine.location %> Vending Machine</h1>
+<hr>
 <section class="snacks-index">
+  <h3>Snacks</h3>
   <% @machine.snacks.each do |snack| %>
-  <p><%= snack.name %>: $<%= snack.price %></p>
+    <p>*<%= snack.name %>: $<%= number_with_precision snack.price, :precision => 2 %></p>
   <% end %>
+</section>
+<hr>
+<section class="snacks-stats">
+  <h4>Average Price of Snacks: $<%= number_with_precision @machine.average_snack_price, :precision => 2 %></h4>
 </section>
