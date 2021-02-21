@@ -19,3 +19,4 @@
 .byebug_history
 Gemfile.lock
 coverage
+.DS_Store
