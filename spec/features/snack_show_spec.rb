@@ -22,12 +22,12 @@ RSpec.describe "Snack Show Page", type: :feature do
     expect(page).to have_content(turing.location)
 
     within "#machine-info-#{dons.id}" do
-      expect(page).to have_content(dons.average_snack_price)
+      expect(page).to have_content(dons.average_snack_price.round(2))
       expect(page).to have_content(dons.snack_count)
     end
 
     within "#machine-info-#{turing.id}" do
-      expect(page).to have_content(turing.average_snack_price)
+      expect(page).to have_content(turing.average_snack_price.round(2))
       expect(page).to have_content(turing.snack_count)
     end
   end
