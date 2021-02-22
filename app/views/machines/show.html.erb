@@ -3,10 +3,10 @@
 <section class="snacks-index">
   <h3>Snacks</h3>
   <% @machine.snacks.each do |snack| %>
-    <p>*<%= snack.name %>: $<%= number_with_precision snack.price, :precision => 2 %></p>
+    <p>*<%= snack.name %>: <%= number_to_currency(snack.price) %></p>
   <% end %>
 </section>
 <hr>
 <section class="snacks-stats">
-  <h4>Average Price of Snacks: $<%= number_with_precision @machine.average_snack_price, :precision => 2 %></h4>
+  <h4>Average Price of Snacks: <%= number_to_currency(@machine.average_snack_price) %></h4>
 </section>
